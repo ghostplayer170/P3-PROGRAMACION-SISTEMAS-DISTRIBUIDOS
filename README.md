@@ -31,5 +31,6 @@ Se han implementado las siguientes funcionalidades:
 ## Diagrama del Sistema
 
 El diagrama de clases del sistema se muestra a continuación:
+
 ![Diagrama_de_Clases](images/DiagramaClases.png)
 
