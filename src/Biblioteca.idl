@@ -1,0 +1,39 @@
+// Biblioteca.idl
+
+module Biblioteca {
+
+    // Define una estructura para un libro
+    struct Libro {
+        string titulo;
+        string autor;
+        string ISBN;
+        float calificacion;
+        sequence<string> comentarios;
+        boolean estaDisponible;
+    };
+
+    typedef sequence<Libro> ListaLibros;
+    typedef sequence<string> ListaComentarios;
+
+    // Define la interfaz para el sistema de gestión de la biblioteca
+    interface GestionBiblioteca {
+        // Busca un libro por título y devuelve los detalles del libro
+        Libro buscarLibro(in string titulo);
+
+        // Presta un libro, cambiando su estado a no disponible
+        boolean prestarLibro(in string ISBN);
+
+        // Devuelve un libro, cambiando su estado a disponible
+        boolean devolverLibro(in string ISBN);
+
+        // Devuelve una lista de todos los libros de la biblioteca
+        ListaLibros listarLibros();
+
+        // Añade un comentario y calificación a un libro
+        boolean anadirComentarioYCalificacion(in string ISBN, in string comentario, in float calificacion);
+
+        // Mostrar comentarios de un libro
+        ListaComentarios mostrarComentarios(in string ISBN);
+    };
+};
+
